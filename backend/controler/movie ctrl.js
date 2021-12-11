@@ -39,4 +39,17 @@ const searchMovie = async (req,res) => {
             res.status(500).send(error.message)
         }
 }
-module.exports = {fetchMovie,fetchMovies,setLoading, searchMovie}
+const search = async(req,res )=>{
+    try{
+    const movies = await Movie.findOne({moviename:req.body.moviename})
+    res.status(200).send(movies)
+
+    }
+    catch(err){
+        res.status(500).send(err.message)
+    }
+}
+
+
+
+module.exports = {fetchMovie,fetchMovies,setLoading, searchMovie ,search}

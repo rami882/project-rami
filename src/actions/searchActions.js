@@ -2,11 +2,12 @@ import { GET_MOVIES,GET_MOVIES_SUCCESS,GET_MOVIES_FAIL, ADD_MOVIES, ADD_MOVIES_S
 import axios from 'axios';
 
 
-//export const searchMovie = text => dispatch => {
- // dispatch({
-   // type: SEARCH_MOVIE,
+//export const search = text => dispatch => {
+  //dispatch({
+    //type: SEARCH_MOVIE,
     //payload: text
   //});
+  
 //};
 
 //export const fetchMovies = text => dispatch => {
@@ -32,7 +33,7 @@ import axios from 'axios';
 export const fetchMovie = (movies) => async (dispatch) => {
   dispatch({type:ADD_MOVIES})
   try {
-      const {data} = await axios.get("/get",)
+      const {data} = await axios.post("/add",)
       dispatch({type:ADD_MOVIES_SUCCESS,payload:data})
   } catch (error) {
       dispatch({type:ADD_MOVIES_FAIL,payload:error.response.data})
@@ -43,7 +44,7 @@ export const fetchMovie = (movies) => async (dispatch) => {
 export const  setLoading = (id,modif) => async (dispatch) => {
   dispatch({type:EDIT_MOVIES})
   try {
-      const {data} = await axios.get("/get")
+      const {data} = await axios.put("/edit/:id")
       dispatch({type:EDIT_MOVIES_SUCCESS,payload:data})
   } catch (error) {
       dispatch({type:EDIT_MOVIES_FAIL,payload:error.response.data})
@@ -53,18 +54,11 @@ export const  setLoading = (id,modif) => async (dispatch) => {
 export const searchMovie = (id) => async (dispatch) => {
   dispatch({type:DELETE_MOVIES})
   try {
-      const {data} = await axios.get(`/get`)
+      const {data} = await axios.put(`/delete/:id`)
       dispatch({type:DELETE_MOVIES_SUCCESS,payload:data})
   } catch (error) {
       dispatch({type:DELETE_MOVIES_FAIL,payload:error.response.data})
   }
 }
-// export const addMovie = (user) => async (dispatch) => {
-//   dispatch({type:ADD_USER})
-//   try {
-//       const {data} = await axios.post("/api/add",user)
-//       dispatch({type:ADD_USER_SUCCESS,payload:data})
-//   } catch (error) {
-//       dispatch({type:ADD_USER_FAIL,payload:error.response.data})
-//   }
-// }
+
+
