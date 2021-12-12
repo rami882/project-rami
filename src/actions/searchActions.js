@@ -54,7 +54,7 @@ export const  setLoading = (id,modif) => async (dispatch) => {
 export const searchMovie = (id) => async (dispatch) => {
   dispatch({type:DELETE_MOVIES})
   try {
-      const {data} = await axios.put(`/delete/:id`)
+      const {data} = await axios.delete(`/delete/:id`)
       dispatch({type:DELETE_MOVIES_SUCCESS,payload:data})
   } catch (error) {
       dispatch({type:DELETE_MOVIES_FAIL,payload:error.response.data})

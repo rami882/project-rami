@@ -15,6 +15,26 @@ const movieSchema = new mongoose.Schema({
     year: {
         type:Number,
         required:true
+    },
+    imdbRating:{
+        type:Number,
+        required:true
+    },
+    Director:{
+        type:String,
+        required:true
+    },
+    Writer:{
+        type:String,
+        required:true
+    },
+    Actors:{
+        type:String,
+        required:true
+    },
+    Plot:{
+        type:String,
+        required:true
     }
 })
 

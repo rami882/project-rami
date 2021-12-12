@@ -23,16 +23,16 @@ export class Movie extends Component {
             <img src={movie.Poster} className="thumbnail" alt="Poster" />
           </div>
           <div className="col-md-8">
-            <h2 className="mb-4">{movie.Title}</h2>
+            <h2 className="mb-4">{movie.moviename}</h2>
             <ul className="list-group">
               <li className="list-group-item">
-                <strong>Genre:</strong> {movie.Genre}
+                <strong>Genre:</strong> {movie.type}
               </li>
               <li className="list-group-item">
-                <strong>Released:</strong> {movie.Released}
+                <strong>Released:</strong> {movie.year}
               </li>
               <li className="list-group-item">
-                <strong>Rated:</strong> {movie.Rated}
+                <strong>Rated:</strong> {movie.rating}
               </li>
               <li className="list-group-item">
                 <strong>IMDB Rating:</strong> {movie.imdbRating}
